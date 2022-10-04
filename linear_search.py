@@ -1,4 +1,4 @@
-# Liners Search 
+# Linear Search 
 
 def search(arr, target):
     for i in range(len(arr)):
