@@ -1,12 +1,16 @@
-# factorials การหาความเป็นไปได้ว่ามีความเป็นไปได้กี่รูปแบบ
-# !5 = 5 x 4 x 3 x 2 x 1
-
-def iterative_factorial(n):
-    fact = 1
-    for i in range(2, n + 1):
-        fact *= i
-    return fact
+# permutation การเปลี่ยนสลับ
 
 
-if __name__ == "__main__":
-    print(iterative_factorial(5))
+def permute(string, pocket=""):
+    if len(string) == 0:
+        print(pocket)
+    else:
+        for i in range(len(string)):
+            letter = string[i]
+            front = string[0:i]
+            back = string[i + 1:]
+            together = front + back
+            permute(together, letter + pocket)
+
+
+print(permute("ABC", ""))
